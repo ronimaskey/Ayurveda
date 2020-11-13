@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import logo from "../logo.png";
 
-export default class Navbar extends Component {
+class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
+      <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
         <Link to="/">
           <img src={logo} alt="store" className="navbar-brand" />
         </Link>
@@ -29,7 +29,18 @@ export default class Navbar extends Component {
             </span>
           </ButtonContainer>
         </Link>
-      </nav>
+      </NavWrapper>
     );
   }
 }
+
+const NavWrapper = styled.nav`
+    background: var(--mainBlue);
+    .nav-link{
+        color:var(--mainWhite)!important;
+        font-size:1.3rem;
+        text-transform: capitalize;
+    }
+`;
+
+export default Navbar;
