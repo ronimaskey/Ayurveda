@@ -13,6 +13,7 @@ export default class Product extends Component {
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
       <div className="card">
         <ProductConsumer>
+          
           {value => {
             return (
               <div
@@ -20,7 +21,7 @@ export default class Product extends Component {
                 onClick={() => value.handleDetail(id)}
               >
                 <Link to="/details">
-                  <img src={img} alt="PRODUCT" className="card-img-top" />
+                  <img src={img} alt="product" className="card-img-top" />
                 </Link>
                 <button
                   className="cart-btn"

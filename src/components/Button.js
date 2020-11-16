@@ -4,6 +4,11 @@ export const ButtonContainer = styled.button`
   background: transparent;
   border:0.05rem solid var(--mainGrey);
   
+  background:${props => 
+    props.cart ? "var(--lightBlue)" : "transparent"
+  };
+  
+  
   font-size:1 rem;
   text-transform:capitalize;
   
