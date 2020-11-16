@@ -1,9 +1,10 @@
 :root{
-  --mainBlue: #2a2172;
-  --lightBlue:#009ffd;
+  --mainBlue: #23374d;
+  --lightBlue:#1089ff;
   --mainWhite: #f3f3f3;
   --mainDark: #232528;
   --mainYellow: #ffa400;
+  --mainGrey: #e5e5e5;
 }
 
 body {

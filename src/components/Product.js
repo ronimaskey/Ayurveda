@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ProductConsumer } from "../context";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 export default class Product extends Component {
   
@@ -33,7 +35,7 @@ export default class Product extends Component {
                       in cart
                     </p>
                   ) : (
-                    <i className="fas fa-cart-plus" />
+                    <FontAwesomeIcon icon={faShoppingCart} /> 
                   )}
                 </button>
               </div>
@@ -42,7 +44,7 @@ export default class Product extends Component {
         </ProductConsumer>
         <div className="card-footer d-flex justify-content-between">
           <p className="align-self-center mb-0">{title}</p>
-          <h5 className="text-blue font-italic mb-0">
+          <h5 className="text-blue price font-italic mb-0">
             <span className="mr-1">$</span>
             {price}
           </h5>
@@ -52,6 +54,9 @@ export default class Product extends Component {
     );
   }
 }
+
+
+
 const ProductWrapper = styled.div`
   .card {
     border-color: transparent;
@@ -60,15 +65,18 @@ const ProductWrapper = styled.div`
   .card-footer {
     background: transparent;
     border-top: transparent;
-    transition: all 1s linear;
   }
   &:hover {
     .card {
       border: 0.04rem solid rgba(0, 0, 0, 0.2);
       box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
     }
-    .card-footer {
-      background: rgba(247, 247, 247);
+    .card-footer{
+      background: var(--lightBlue);
+      color: var(--mainWhite);
+    }
+    .price {
+      color: var(--mainWhite);
     }
   }
   .img-container {
@@ -78,21 +86,16 @@ const ProductWrapper = styled.div`
   .card-img-top {
     transition: all 1s linear;
   }
-  .img-container:hover .card-img-top {
-    transform: scale(1.2);
-  }
   .cart-btn {
     position: absolute;
     bottom: 0;
     right: 0;
     padding: 0.2rem 0.4rem;
-    background: var(--lightBlue);
+    background: #fff;
     border: none;
-    color: var(--mainWhite);
+    color: var(--mainDark);
     font-size: 1.4rem;
     border-radius: 0.5rem 0 0 0;
-    transform: translate(100%, 100%);
-    transition: all 1s ease-in-out;
   }
   .img-container:hover .cart-btn {
     transform: translate(0, 0);

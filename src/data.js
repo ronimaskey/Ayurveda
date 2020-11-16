@@ -38,7 +38,7 @@ export const storeProducts = [
     {
       id: 4,
       title: "HTC 10 - White",
-      img: "img/rose-petal.jpg",
+      img: "img/rose.jpg",
       price: 18,
       company: "htc",
       info:
