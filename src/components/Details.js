@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { ProductConsumer } from "../context";
-import { ButtonContainer } from "./Button";
+import { ButtonContainer, ButtonContainerBack } from "./Button";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 
 export default class Details extends Component {
   render() {
@@ -73,22 +72,3 @@ export default class Details extends Component {
   }
 }
 
-const ButtonContainerBack = styled.button`
-    background: var(--lightBlue);
-    border:0.05rem solid var(--mainGrey);
-    font-size:1 rem;
-    text-transform:capitalize;
-    
-    color: var(--mainGrey);
-    padding: 0.2rem 0.5rem;
-    cursor:pointer;
-    margin:0.2rem 0.5rem 0.2rem 0;
-    transition:all 0.5s ease-in-out;
-    &:hover{
-      background: var(--mainGrey);
-      color: var(--mainBlue);
-    }
-    &:focus {
-      outline: none;
-    }
-`;
