@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { storeProducts, detailProduct } from "./data";
-
 const ProductContext = React.createContext();
-//Provider
-//Consumer
 
 class ProductProvider extends Component {
   state = {
@@ -16,7 +13,6 @@ class ProductProvider extends Component {
     cartTax: 0,
     cartTotal: 0
   };
-
   componentDidMount() {
     this.setProducts();
   }
@@ -36,14 +32,12 @@ class ProductProvider extends Component {
     const product = this.state.products.find(item => item.id === id);
     return product;
   };
-
   handleDetail = id => {
     const product = this.getItem(id);
     this.setState(() => {
       return { detailProduct: product };
     });
   };
-
   addToCart = id => {
     let tempProducts = [...this.state.products];
     const index = tempProducts.indexOf(this.getItem(id));
@@ -72,7 +66,6 @@ class ProductProvider extends Component {
       return { modalOpen: false };
     });
   };
-
   increment = id => {
     let tempCart = [...this.state.cart];
     const selectedProduct = tempCart.find(item => {
@@ -170,24 +163,27 @@ class ProductProvider extends Component {
       }
     );
   };
-
   render() {
     return (
-        <ProductContext.Provider value=
-            {{  
-              ...this.state,
-              handleDetail: this.handleDetail,
-              addToCart: this.addToCart,
-              openModal: this.openModal,
-              closeModal: this.closeModal,
-            }}
-        >
-            {this.props.children}
-        </ProductContext.Provider>
+      <ProductContext.Provider
+        value={{
+          ...this.state,
+          handleDetail: this.handleDetail,
+          addToCart: this.addToCart,
+          openModal: this.openModal,
+          closeModal: this.closeModal,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart
+        }}
+      >
+        {this.props.children}
+      </ProductContext.Provider>
     );
   }
 }
 
 const ProductConsumer = ProductContext.Consumer;
 
-export { ProductProvider, ProductConsumer }
+export { ProductProvider, ProductConsumer };

@@ -50,3 +50,8 @@ body {
 .cart-icon:hover {
   color: var(--mainBlue);
 }
+
+.add-in-cart{
+  font-size: 0.75rem;
+  color: #969696;
+}
