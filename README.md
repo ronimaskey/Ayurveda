@@ -1,6 +1,6 @@
 See app live on https://ayurveda-store.netlify.app/.
 
-React-Phone-E-Commerce-Project is a web ReactJS application hosted on Netlify with the usage of PayPal REST API This project was bootstrapped with Create React App.
+React-E-Commerce-Project is a web ReactJS application hosted on Netlify with the usage of PayPal REST API This project was bootstrapped with Create React App.
 URL
 
 To visit the app go to the https://ayurveda-store.netlify.app/
